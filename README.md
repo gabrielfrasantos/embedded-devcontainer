@@ -1,6 +1,6 @@
-# amp-devcontainer
+# embedded-devcontainer
 
-[![Linting & Formatting](https://github.com/philips-software/amp-devcontainer/actions/workflows/linting-formatting.yml/badge.svg)](https://github.com/philips-software/amp-devcontainer/actions/workflows/linting-formatting.yml) [![Build & Push](https://github.com/philips-software/amp-devcontainer/actions/workflows/build-push.yml/badge.svg)](https://github.com/philips-software/amp-devcontainer/actions/workflows/build-push.yml)
+[![Linting & Formatting](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/linting-formatting.yml/badge.svg)](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/linting-formatting.yml) [![Build & Push](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/build-push.yml/badge.svg)](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/build-push.yml)
 
 ## Overview
 
@@ -8,12 +8,12 @@ This repository contains a [devcontainer](https://docs.github.com/en/codespaces/
 
 ## State
 
-This repository is under active development; see [pulse](https://github.com/philips-software/amp-devcontainer/pulse) for more details;
+This repository is under active development; see [pulse](https://github.com/gabrielfrasantos/embedded-devcontainer/pulse) for more details;
 
 ## Description
 
-The amp-devcontainer built from this repository contains compilers and tools to facilitate modern (embedded) C++ development.
-The amp-devcontainer includes support for host- and cross-compilation using gcc, arm-gcc and clang compilers.
+The embedded-devcontainer built from this repository contains compilers and tools to facilitate modern (embedded) C++ development.
+The embedded-devcontainer includes support for host- and cross-compilation using gcc, arm-gcc and clang compilers.
 Next to the compilers there is support for code-coverage measurement, mutation testing (using [mull](https://github.com/mull-project/mull)), fuzzing (using [libfuzzer](https://www.llvm.org/docs/LibFuzzer.html)) and static analysis (clang-format, clang-tidy, clangd, include-what-you-use).
 The default build system is set up to use CMake, Ninja and CCache.
 
@@ -31,7 +31,7 @@ The resulting container can be used in a `.devcontainer` folder. While the examp
 
 ```json
 {
-    "image": "ghcr.io/philips-software/amp-devcontainer:latest"
+    "image": "ghcr.io/gabrielfrasantos/embedded-devcontainer:latest"
 }
 ```
 

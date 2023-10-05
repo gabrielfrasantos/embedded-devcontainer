@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     # Using our own container is required since we need all package sources
     # set-up correctly.
-    container: ghcr.io/philips-software/amp-devcontainer:latest
+    container: gabrielfrasantos/embedded-devcontainer:latest
     permissions:
       contents: write
       pull-requests: write
@@ -29,4 +29,4 @@ jobs:
           branch: feature/update-apt-dependencies
           title: "chore(deps): update apt dependencies"
           labels: dependencies
-          token: ${{ secrets.AMP_RELEASER_TOKEN }}
+          token: ${{ secrets.AUTOMATIC_RELEASE_TOKEN }}

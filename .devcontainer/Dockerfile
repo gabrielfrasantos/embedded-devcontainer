@@ -27,10 +27,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends jq \
 RUN wget -qO /usr/local/share/ca-certificates/Cisco_Umbrella_Root_CA.crt https://www.cisco.com/security/pki/certs/ciscoumbrellaroot.pem \
  && update-ca-certificates
 
+# Setup git branch view in CLI
+RUN echo "parse_git_branch() {" >> /root/.bashrc \
+    && echo "    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\\\1)/'" >> /root/.bashrc \
+    && echo "}" >> /root/.bashrc \
+    && echo "export PS1='\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ '" >> /root/.bashrc
+
 # Install some tools via pip to get more recent versions
 RUN python3 -m pip --no-cache-dir install \
   cmake==3.26.4 \
-  gcovr==6.0
+  gcovr==6.0 \
+  pre-commit==3.4.0
 
 # Set default generator for CMake to Ninja
 ENV CMAKE_GENERATOR="Ninja"
@@ -64,8 +71,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends libclang-${CLAN
  && rm -rf /var/lib/apt/lists/*
 
 # Install arm-gcc toolchain
-COPY .devcontainer/gcc-${GCC_VERSION}/install-arm-none-eabi.sh /tmp/install-arm-none-eabi.sh
-RUN /tmp/install-arm-none-eabi.sh && rm /tmp/install-arm-none-eabi.sh
+RUN mkdir /opt/gcc-arm-none-eabi \
+ && wget -qO - https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-$(uname -m)-linux.tar.bz2 | tar xj --strip-components=1 -C /opt/gcc-arm-none-eabi
 ENV PATH="$PATH:/opt/gcc-arm-none-eabi/bin"
 
 # Install docker-cli for Docker-from-Docker tools
