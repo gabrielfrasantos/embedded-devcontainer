@@ -27,12 +27,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends jq \
 RUN wget -qO /usr/local/share/ca-certificates/Cisco_Umbrella_Root_CA.crt https://www.cisco.com/security/pki/certs/ciscoumbrellaroot.pem \
  && update-ca-certificates
 
-# Setup git branch view in CLI
-RUN echo "parse_git_branch() {" >> /root/.bashrc \
-    && echo "    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\\\1)/'" >> /root/.bashrc \
-    && echo "}" >> /root/.bashrc \
-    && echo "export PS1='\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ '" >> /root/.bashrc
-
 # Install some tools via pip to get more recent versions
 RUN python3 -m pip --no-cache-dir install \
   cmake==3.26.4 \
@@ -105,3 +99,9 @@ RUN wget -qO - https://github.com/ccache/ccache/archive/refs/tags/v${CCACHE_VERS
  && cmake -DCMAKE_BUILD_TYPE=Release -S /tmp/ccache-${CCACHE_VERSION} -B /tmp/ccache-${CCACHE_VERSION}/build \
  && cmake --build /tmp/ccache-${CCACHE_VERSION}/build --target install \
  && rm -rf /tmp/ccache-${CCACHE_VERSION}
+
+# Setup git branch view in CLI
+RUN echo "parse_git_branch() {" >> /root/.bashrc \
+ && echo "    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'" >> /root/.bashrc \
+ && echo "}" >> /root/.bashrc \
+ && echo "export PS1='\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ '" >> /root/.bashrc
