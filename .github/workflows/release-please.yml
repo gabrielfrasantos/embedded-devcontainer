@@ -22,4 +22,4 @@ jobs:
       - uses: google-github-actions/release-please-action@4c5670f886fe259db4d11222f7dff41c1382304d # v3.7.12
         with:
           command: manifest
-          token: ${{ secrets.AUTOMATIC_RELEASE_TOKEN }}
+          token: ${{ secrets.AUTOMATIC_RELEASE_PLEASE_TOKEN }}
