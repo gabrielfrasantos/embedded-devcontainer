@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.0](https://github.com/gabrielfrasantos/embedded-devcontainer/compare/v1.0.0...v1.1.0) (2023-10-11)
+
+
+### Features
+
+* Add provenance and sbom to image ([af422b9](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/af422b97b5cd386e96b4b82c4fc6e333e5b7b6e2))
+* Add xwin to the container ([#94](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/94)) ([0b79759](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/0b797599632127d6802e8192bf018f62b61d51f5))
+* Build multi-platform image ([#4](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/4)) ([839fb0d](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/839fb0dc61051b25926ac847bfe12646284a31a7))
+* Fix tagged release workflow ([#15](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/15)) ([1ee833b](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/1ee833bcb69390138e30e600b62bd166a62d006f))
+* Include lld as an alternative to the gold and bfd linkers ([d8adb0b](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/d8adb0bc3ec9eb01d84c5563ce37bfc30e45c70f))
+* Install ccache-4.8.2 from source ([#110](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/110)) ([ff56bbc](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/ff56bbcf00b256362200ec0b89e75f7f381f6213))
+* Install static docker-cli from download.docker.com ([#68](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/68)) ([8cebc19](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/8cebc19373ad4ae2e77c2c913c7928e21a1e9380))
+* Update bats-core to 1.9.0 and bats-assert to 2.1.0 ([#67](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/67)) ([135c58b](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/135c58b0a16d2fb9d525a6d0a2e4137e41646a49))
+* Update cmake to 3.26.3 ([#66](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/66)) ([766f766](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/766f76662ab8a9f682b9237fbf295bb32ce1df1b))
+* Update CMake to 3.26.4 ([#112](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/112)) ([8fa0666](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/8fa0666d36be529b39482fa1391bda772440a90d))
+* Update Docker to 24.0.4 ([#111](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/111)) ([f7b4540](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/f7b4540915fa8258a0667fbe0a3ac8b513f81561))
+* Update gcovr to 6.0 ([#65](https://github.com/gabrielfrasantos/embedded-devcontainer/issues/65)) ([96e3436](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/96e3436564499d5f1dc254fad595227ee7f15674))
+
+
+### Bug Fixes
+
+* Set executable bit on shell scripts ([33406a3](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/33406a3d936cb0da465e9df0f27415f4a861d59d))
+* Update GITHUB_TOKEN permissions ([a4a2e1a](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/a4a2e1a4921292beed9810fa9c099e56069cbdcb))
+* Update GITHUB_TOKEN permissions ([90ca544](https://github.com/gabrielfrasantos/embedded-devcontainer/commit/90ca54409b0c8b20c334e9a2a284647103f76af1))
+
 ## [2.5.0](https://github.com/philips-software/amp-devcontainer/compare/v2.4.0...v2.5.0) (2023-07-13)
 
 
