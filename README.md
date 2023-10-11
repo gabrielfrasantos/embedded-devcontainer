@@ -2,6 +2,9 @@
 
 [![Linting & Formatting](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/linting-formatting.yml/badge.svg)](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/linting-formatting.yml) [![Build & Push](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/build-push.yml/badge.svg)](https://github.com/gabrielfrasantos/embedded-devcontainer/actions/workflows/build-push.yml)
 
+# **NOTE**
+**This repo is a fork of https://github.com/philips-software/amp-devcontainer with custom changes!**
+
 ## Overview
 
 This repository contains a [devcontainer](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers) tailored towards modern (embedded) C++ development.
@@ -31,7 +34,7 @@ The resulting container can be used in a `.devcontainer` folder. While the examp
 
 ```json
 {
-    "image": "ghcr.io/gabrielfrasantos/embedded-devcontainer:latest"
+    "image": "gabrielfrasantos/embedded-devcontainer:latest"
 }
 ```
 
